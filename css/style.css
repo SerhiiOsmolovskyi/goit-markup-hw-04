@@ -6,6 +6,7 @@
   --hover-focus: #404bbf;
   --white-text:#f4f4fd;
   --btn-border-color:#e7e9fc;
+  --customers-logo-color: #8E8F99;
 }
 
 h1,
@@ -218,6 +219,12 @@ h3 {
 .hero {
   background-color: var(--primary-color);
   padding: 188px 0;
+  background-image: linear-gradient(
+  rgba(46, 47, 66, 0.70),
+  rgba(46, 47, 66, 0.70)
+  ),
+  url('../images/people-office-hero-banner.jpg');
+  background-size: cover;
 }
 
 .first-section {
@@ -275,6 +282,13 @@ h3 {
 
 .values-list-item {
   width: calc((100% - 24px * 3) / 4);
+}
+
+.values-list-icon {
+  border-radius: 4px;
+  background: var(--white-text);
+  width: 100%;
+
 }
 
 
@@ -343,6 +357,11 @@ h3 {
 }
 .team-member-role {
   text-align: center;
+}
+
+.customers {
+
+  padding: 120px 0;
 }
 
 .portfolio {
@@ -415,4 +434,49 @@ h3 {
   color: var(--white-text);
   letter-spacing: 0.02em;
   max-width: 264px;
+}
+
+.customers-list {
+  display: flex;
+  box-sizing: border-box;
+  gap: 24px;
+}
+
+.customers-list-icon {
+  fill: var(--customers-logo-color);
+  border-radius: 4px;
+  border: 1px solid var(--lightslate, #8E8F99);
+  width: 168px;
+  height: 88px;
+  padding: 16px 32px;
+  flex-shrink: 0;
+  gap: 24px;
+  
+
+}
+
+
+.social-list-icon {
+  fill: var(--white-text);
+  background-color: var(--accent-color);
+  
+}
+
+
+
+.footer .social-media-list {
+  display: flex;
+  gap: 16px;
+}
+
+.footer .container {
+  display: flex;
+}
+
+.footer-left {
+  margin-right: 120px;
+}
+
+.footer-right .footer-text {
+  margin-bottom: 16px;
 }
