@@ -10,6 +10,7 @@
   --navyblue-modal: rgba(46, 47, 66, 0.40);
   --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --dairy-color: #FCFCFC;
+  --footer-sm-link-color:#31d0aa;
 }
 
 h1,
@@ -429,12 +430,39 @@ h3 {
   justify-content: center;
 }
 
+.filter-list-item {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.filter-list-item:hover,
+.filter-list-item:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
+}
+
 .portfolio-list {
   display: flex;
   column-gap: 24px;
   row-gap: 48px;
   flex-wrap: wrap;
   
+}
+
+.portfolio-list-link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-list-link:hover, 
+.portfolio-list-link:focus {
+  box-shadow:0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-title {
@@ -451,7 +479,8 @@ h3 {
   width: calc((100% - 24px * 2) /3 );
 }
 
-.portolio-list-item:hover .overlay {
+.portolio-list-item:hover .overlay,
+.portolio-list-item:focus .overlay {
   transform: translateY(0%);
 }
 
@@ -459,7 +488,7 @@ h3 {
 .portfolio-item-category {
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em;   
   color: var(--text-color);
 }
 
@@ -500,8 +529,7 @@ h3 {
   gap: 24px;
 }
 
-
-.customers-list-icon {
+.customer-list-link {
   fill: var(--currentColor);
   width: 100%;
   height: 100%;
@@ -513,9 +541,31 @@ h3 {
   color: var(--currentColor);
 }
 
+.customer-list-link:hover,
+.customer-list-link:active {
+  border-color: var(--hover-focus);
+  color: var(--hover-focus);
+  fill: var(--hover-focus);
+  }
+
+
+.customers-list-icon {
+  fill: var(--currentColor);
+  /* width: 100%;
+  height: 100%;
+  border: 1px solid var(--currentColor);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--currentColor); */
+}
+
 .customers-list-item {
   width: calc((100% - 120px) / 6);
   height: 88px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -555,6 +605,14 @@ h3 {
   display: flex;
   gap: 16px;
 }
+.footer .social-list-icon-wrapper:hover, 
+.footer .social-list-icon-wrapper:active {
+  display: flex;
+  gap: 16px;
+  background-color: var(--footer-sm-link-color);
+}
+
+
 .team-member .social-media-list {
   margin-top: 8px;
   display: flex;
@@ -562,6 +620,7 @@ h3 {
   justify-content: center;
   align-items: center;
 }
+
 
 .footer .container {
   display: flex;
@@ -591,28 +650,50 @@ h3 {
 
 .modal {
   position: absolute;
-  top: 80px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
   background-color: var(--dairy-color);
   border-radius: 4px;
+  min-height: 588px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms var(--transition-dur-and-func);
 }
 
 .close-btn {
   position: absolute;
-  right: 32px;
-  top: 32px;
-  background-color: transparent;
-  border: none;
+  width: 24px;
+  height: 24px;
+  right: 24px;
+  top: 24px;
+  background-color: var(--btn-border-color);
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
-  line-height: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  background-color: var(--hover-focus);
+  border: none;
 }
 
 
 .close-btn-icon {
   stroke: var(--primary-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn-icon:hover, 
+.close-btn-icon:focus {
+  fill: var(--secondary-color);
 }
 
 .is-hidden {
