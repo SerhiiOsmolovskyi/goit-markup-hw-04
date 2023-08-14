@@ -429,13 +429,11 @@ h3 {
  transition: transform var(--transition-dur-and-func);
 }
 
-
+/* .portolio-list-item:hover .overlay,
 .portolio-list-item:focus .overlay {
   transform: translateY(0%);
-}
-.portolio-list-item:hover .overlay {      
-  transform: translateY(0%);
-}
+} */
+
 
 .filter-list {
   display: flex;
@@ -454,11 +452,10 @@ h3 {
 
 
 .filter-list-item:hover,
-.filter-list-item:focus {
+.filter-list-item:focus  {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-
 }
 
 .portfolio-list {
@@ -478,6 +475,11 @@ h3 {
   box-shadow:0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-list-link:hover .overlay,
+.portfolio-list-link:focus .overlay {
+  transform: translateY(0%);
 }
 
 .portfolio-item-title {
@@ -616,11 +618,11 @@ h3 {
 
 
 .footer .social-media-list {
-  display: flex;
+  display: flex;                      
   gap: 16px;
 }
-.footer .social-list-icon-wrapper:hover, 
-.footer .social-list-icon-wrapper:active {
+.footer .social-list-item .social-list-icon-wrapper:hover, 
+.footer .social-list-item .social-list-icon-wrapper:focus {
   display: flex;
   gap: 16px;    
   background-color: var(--footer-sm-link-color);
@@ -696,6 +698,7 @@ h3 {
 
 .close-btn:hover,
 .close-btn:focus {
+  fill: var(--secondary-color);
   background-color: var(--hover-focus);
   border: none;
 }
