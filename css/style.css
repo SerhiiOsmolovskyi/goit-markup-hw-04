@@ -285,6 +285,7 @@ h3 {
   border: none;
   border-radius: 4px;
   margin: 48px auto 0 auto;
+  transition: transform 250ms var(--transition-dur-and-func);
   transition: background-color var(--transition-dur-and-func);
 }
 
